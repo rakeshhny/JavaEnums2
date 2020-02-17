@@ -3,3 +3,5 @@ JavaEnums2.iml
 .idea/modules.xml
 .idea/misc.xml
 .idea/.gitignore
+*.class
+out/production/JavaEnums2/META-INF/JavaEnums2.kotlin_module
