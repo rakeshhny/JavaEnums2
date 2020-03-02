@@ -10,6 +10,7 @@ public enum Planet {
 
     private final double mass;   // in kilograms
     private final double radius; // in meters
+    
     Planet(double mass, double radius) {
         this.mass = mass;
         this.radius = radius;
@@ -23,16 +24,24 @@ public enum Planet {
     double surfaceGravity() {
         return G * mass / (radius * radius);
     }
+
     double surfaceWeight(double otherMass) {
         return otherMass * surfaceGravity();
     }
+
     public static void main(String[] args) {
         if (args.length != 1) {
             System.err.println("Usage: java Planet <earth_weight>");
             System.exit(-1);
         }
+
+        // Input weight of an object on Earth
         double earthWeight = Double.parseDouble(args[0]);
+
+        // Compute mass of the object on Earth
         double mass = earthWeight/EARTH.surfaceGravity();
+
+        // Return weight of an object on each planet
         for (Planet p : Planet.values())
             System.out.printf("Your weight on %s is %f%n",
                     p, p.surfaceWeight(mass));
