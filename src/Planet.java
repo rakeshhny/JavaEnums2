@@ -10,7 +10,7 @@ public enum Planet {
 
     private final double mass;   // in kilograms
     private final double radius; // in meters
-    
+
     Planet(double mass, double radius) {
         this.mass = mass;
         this.radius = radius;
